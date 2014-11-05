@@ -1,6 +1,6 @@
 name = input("Enter your name: ")
-if name == "Diane":
+if name.lower == "diane":
 	print("You're great!")
-if name == "Amanda":
+if name.lower == "amanda":
 	print("You smell!")
 else: print("Hello", name)
