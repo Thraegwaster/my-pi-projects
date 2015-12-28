@@ -3,10 +3,12 @@
 
 print()
 for value in (None, "Hi!", 7):
-	try:
-		print("Attempting to convert", value, "-->", end=" ")
-		print(float(value))
-	except (TypeError, ValueError):
-		print("Something went wrong!")
+    try:
+        print("Attempting to convert", value, "-->", end=" ")
+	print(float(value))
+    except TypeError:
+        print("I can only convert a string or a number!")
+    except ValueError:
+        print("I can only convert a string of digits!")
 
 input("\n\nPress any key to continue")
