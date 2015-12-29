@@ -26,6 +26,7 @@ class Critter(object):
 
 # main
 
+Critter.status()
 
 crit1 = Critter("Ted", 8)
 crit1.talk()
