@@ -1,7 +1,7 @@
 # Playing Cards
 # Demonstrates combining objects
 
-class Card(object)
+class Card(object):
 	"""A playing card"""
 	RANKS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 	SUITS = ["c", "d", "h", "s"]
@@ -50,3 +50,34 @@ print(card2)
 print(card3)
 print(card4)
 print(card5)
+
+my_hand = Hand()
+print("\nPrinting my hand before I add any cards:")
+print(my_hand)
+
+# Next, add five card objects to my_hand and print it again:
+
+my_hand.add(card1)
+my_hand.add(card2)
+my_hand.add(card3)
+my_hand.add(card4)
+my_hand.add(card5)
+print("\nPrinting my hand after adding five cards:")
+print(my_hand)
+
+# Now another Hand object is created: your hand. Using my_hand's give() method, the first two cards
+# are transferred from my_hand to your_hand.
+your_hand = Hand()
+my_hand.give(card1, your_hand)
+my_hand.give(card2, your_hand)
+print("\nGave the first two cards from my hand to your hand.")
+print("Your hand:")
+print(your_hand)
+print("My hand:")
+print(my_hand)
+
+my_hand.clear()
+print("\nMy hand after clearing it:")
+print(my_hand)
+
+input("\nPress the enter key to exit.")
