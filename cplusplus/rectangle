@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+double surface(double length, double height);
+
+int main()
+{
+	double length(3.0);
+	double height(4.0);
+
+	cout << "The area of the rectangle is : "
+		<< surface(length, width) << endl;
+
+	return 0;
+}
+
+double surface(double length, double width)
+{
+	return length*width
+}
