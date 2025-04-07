@@ -14,3 +14,5 @@ def double(x):
 lambda x: 2*x
 
 print((lambda x: 2*x)(4))
+
+# Functions as arguments
