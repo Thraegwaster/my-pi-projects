@@ -8,7 +8,7 @@ Created on Tue Apr  8 15:56:02 2025
 
 # This implementation is surprisingly concise.
 def qsort(lst):
-    if lst == []: return []
+     if lst == []: return []
     p = lst[0]  # pivot element
     sml = qsort([x for x in lst[1:] if x < p])
     grt = qsort([x for x in lst[1:] if x >= p])
