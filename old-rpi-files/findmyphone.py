@@ -1,17 +1,21 @@
 
-import bluetooth
+import asyncio
+from bleak import BleakScanner
 
-target_name = "Nexus 7"
-target_address = None
+IPHONE_NAME = "Thraegwaster"
 
-nearby_devices = bluetooth.discover_devices()
+async def main():
+    print("Scanning for Bluetooth devices...")
 
-for bdaddr in nearby_devices:
-    if target_name == bluetooth.lookup_name( bdaddr ):
-        target_address = bdaddr
-        break
+    devices = await BleakScanner.discover(timeout=5.0)
 
-if target_address is not None:
-    print "found target bluetooth device with address ", target_address
-else:
-    print "could not find target bluetooth device nearby"
+    for device in devices:
+        print(f"Name: {device.name}, Address: {device.address}")
+
+        if device.name == IPHONE_NAME:
+            print(f"\n✅ {IPHONE_NAME} is nearby")
+            return
+
+    print(f"\n❌ {IPHONE_NAME} was not detected")
+
+asyncio.run(main())
